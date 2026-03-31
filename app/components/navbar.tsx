@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { signIn, useSession } from "next-auth/react"
 import {
   Menu, X, ChevronDown,
   Scissors, LayoutGrid, Stethoscope, Store, Building2, Dumbbell,
@@ -40,6 +41,30 @@ const dev2bItems = [
 ]
 
 type DropdownKey = "negocios" | "solucoes" | "dev2b" | null
+
+function ClienteButton() {
+  const { data: session } = useSession()
+
+  if (session) {
+    return (
+      <button
+        onClick={() => signIn("keycloak")}
+        className="text-sm font-medium text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
+      >
+        {session.user?.name ?? "Minha conta"}
+      </button>
+    )
+  }
+
+  return (
+    <button
+      onClick={() => signIn("keycloak")}
+      className="text-sm font-medium text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
+    >
+      Já sou cliente
+    </button>
+  )
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled]         = useState(false)
@@ -229,9 +254,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-2">
-            <Link href="#" className="text-sm font-medium text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors">
-              Ja sou cliente
-            </Link>
+            <ClienteButton />
             <Link href="/planos"
               className="text-sm font-semibold px-5 py-2.5 rounded-xl bg-[#7C4DFF] text-white hover:bg-[#6B3FE8] transition-all duration-200 shadow-lg shadow-[#7C4DFF]/30 hover:shadow-[#7C4DFF]/50">
               Teste gratis
