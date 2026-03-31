@@ -2,7 +2,19 @@ services:
   dev2b-landing:
     image: ${DOCKER_USERNAME}/dev2b-landing:${IMAGE_TAG}
     restart: unless-stopped
-    ports:
-      - "80:3000"
+    expose:
+      - "3000"
     environment:
       - NODE_ENV=production
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dev2b-landing.rule=Host(`dev2b.com.br`)"
+      - "traefik.http.routers.dev2b-landing.entrypoints=web"
+      - "traefik.http.services.dev2b-landing.loadbalancer.server.port=3000"
+
+networks:
+  proxy:
+    external: true
+    name: proxy
