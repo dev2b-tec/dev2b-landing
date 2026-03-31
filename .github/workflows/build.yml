@@ -1,4 +1,4 @@
-name: Build
+name: Build & Deploy
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - main
 
 jobs:
-  docker:
+  build:
     uses: dev2b-tec/core-cicd-templates/.github/workflows/ci-docker.yml@main
     permissions:
       contents: read
@@ -24,3 +24,19 @@ jobs:
     secrets:
       registry-username: ${{ github.actor }}
       registry-password: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    uses: dev2b-tec/core-cicd-templates/.github/workflows/docker-deploy.yml@main
+    with:
+      app_name: dev2b-landing
+      image_tag: main
+      deploy_path: /opt/apps/dev2b-landing
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_USER: ${{ secrets.VPS_USER }}
+      VPS_PASSWORD: ${{ secrets.VPS_PASSWORD }}
+      VPS_PORT: ${{ secrets.VPS_PORT }}
