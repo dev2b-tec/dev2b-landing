@@ -10,12 +10,14 @@ on:
       - main
 
 jobs:
-  build:
-    uses: DEV2B/core-cicd-templates/.github/workflows/docker-build.yml@main
+  docker:
+    uses: dev2b-tec/core-cicd-templates/.github/workflows/ci-docker.yml@main
     with:
-      app_name: dev2b-landing
-      context: "app"
-      dockerfile_path: "Dockerfile"
+      image-name: ghcr.io/${{ github.repository }}
+      registry: ghcr.io
+      dockerfile: Dockerfile
+      context: app
+      push: ${{ github.event_name == 'push' }}
     secrets:
-      DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      registry-username: ${{ github.actor }}
+      registry-password: ${{ secrets.GITHUB_TOKEN }}
