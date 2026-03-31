@@ -4,6 +4,9 @@ services:
     restart: unless-stopped
     expose:
       - "3000"
+    env_file:
+      - path: .env.app
+        required: false
     environment:
       - NODE_ENV=production
     networks:
