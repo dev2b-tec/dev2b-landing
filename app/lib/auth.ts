@@ -3,6 +3,7 @@ import Keycloak from "next-auth/providers/keycloak"
 import type { JWT } from "next-auth/jwt"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  trustHost: true,
   providers: [
     Keycloak({
       clientId: process.env.KEYCLOAK_CLIENT_ID!,
