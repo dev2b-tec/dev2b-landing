@@ -12,6 +12,9 @@ on:
 jobs:
   docker:
     uses: dev2b-tec/core-cicd-templates/.github/workflows/ci-docker.yml@main
+    permissions:
+      contents: read
+      packages: write
     with:
       image-name: ghcr.io/${{ github.repository }}
       registry: ghcr.io
