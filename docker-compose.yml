@@ -11,7 +11,9 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.dev2b-landing.rule=Host(`dev2b.tec.br`)"
-      - "traefik.http.routers.dev2b-landing.entrypoints=web"
+      - "traefik.http.routers.dev2b-landing.entrypoints=websecure"
+      - "traefik.http.routers.dev2b-landing.tls=true"
+      - "traefik.http.routers.dev2b-landing.tls.certresolver=letsencrypt"
       - "traefik.http.services.dev2b-landing.loadbalancer.server.port=3000"
 
 networks:
