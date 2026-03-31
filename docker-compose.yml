@@ -10,7 +10,7 @@ services:
       - proxy
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.dev2b-landing.rule=Host(`dev2b.com.br`)"
+      - "traefik.http.routers.dev2b-landing.rule=Host(`dev2b.tec.br`)"
       - "traefik.http.routers.dev2b-landing.entrypoints=web"
       - "traefik.http.services.dev2b-landing.loadbalancer.server.port=3000"
 
