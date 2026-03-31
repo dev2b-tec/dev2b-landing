@@ -1,6 +1,6 @@
 services:
   dev2b-landing:
-    image: ghcr.io/dev2b-tec/dev2b-landing:${IMAGE_TAG}
+    image: ghcr.io/dev2btec/dev2b-landing:${IMAGE_TAG}
     restart: unless-stopped
     ports:
       - "80:3000"
