@@ -48,7 +48,7 @@ function ClienteButton() {
   if (session) {
     return (
       <button
-        onClick={() => signIn("keycloak")}
+        onClick={() => signIn("keycloak", { callbackUrl: "https://app.dev2b.tec.br" })}
         className="text-sm font-medium text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
       >
         {session.user?.name ?? "Minha conta"}
@@ -58,7 +58,7 @@ function ClienteButton() {
 
   return (
     <button
-      onClick={() => signIn("keycloak")}
+      onClick={() => signIn("keycloak", { callbackUrl: "https://app.dev2b.tec.br" })}
       className="text-sm font-medium text-white/60 hover:text-white px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
     >
       Já sou cliente
