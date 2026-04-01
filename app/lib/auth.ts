@@ -12,6 +12,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     }),
   ],
   callbacks: {
+    async redirect({ url, baseUrl }) {
+      // Permite redirect para app.dev2b.tec.br após login
+      if (url.startsWith("https://app.dev2b.tec.br")) return url
+      // Comportamento padrão
+      if (url.startsWith("/")) return `${baseUrl}${url}`
+      if (url.startsWith(baseUrl)) return url
+      return baseUrl
+    },
     async jwt({ token, account }) {
       // Primeira vez que loga: salva os tokens do Keycloak
       if (account) {
