@@ -9,6 +9,7 @@ services:
         required: false
     environment:
       - NODE_ENV=production
+      - AUTH_URL=https://dev2b.tec.br
     networks:
       - proxy
     labels:

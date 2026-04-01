@@ -44,7 +44,7 @@ Crie o arquivo `app/.env.local` com o seguinte conteúdo:
 AUTH_SECRET=              # gere com: openssl rand -base64 32
 KEYCLOAK_CLIENT_ID=dev2b-app
 KEYCLOAK_CLIENT_SECRET=   # Client Secret do Keycloak
-KEYCLOAK_ISSUER=https://keycloak.dev2b.tec.br/realms/dev2b
+KEYCLOAK_ISSUER=https://auth.dev2b.tec.br/realms/dev2b
 NEXTAUTH_URL=http://localhost:3000
 ```
 
@@ -65,7 +65,7 @@ O botão **"Já sou cliente"** no navbar aciona o login via Keycloak usando o fl
 
 ### Configuração necessária no Keycloak
 
-1. Acesse `https://keycloak.dev2b.tec.br` → Admin Console
+1. Acesse `https://auth.dev2b.tec.br` → Admin Console
 2. Crie o realm **`dev2b`**
 3. Dentro do realm, crie um Client:
    - **Client ID:** `dev2b-app`
@@ -122,6 +122,7 @@ Vá em **Settings → Secrets and variables → Actions** e crie:
 
 ```env
 AUTH_SECRET=<openssl rand -base64 32>
+AUTH_URL=https://dev2b.tec.br
 KEYCLOAK_CLIENT_ID=dev2b-app
 KEYCLOAK_CLIENT_SECRET=<client secret do Keycloak>
 KEYCLOAK_ISSUER=https://auth.dev2b.tec.br/realms/dev2b
@@ -155,7 +156,7 @@ cat > .env.app << 'EOF'
 AUTH_SECRET=...
 KEYCLOAK_CLIENT_ID=dev2b-app
 KEYCLOAK_CLIENT_SECRET=...
-KEYCLOAK_ISSUER=https://keycloak.dev2b.tec.br/realms/dev2b
+KEYCLOAK_ISSUER=https://auth.dev2b.tec.br/realms/dev2b
 NEXTAUTH_URL=https://dev2b.tec.br
 EOF
 
