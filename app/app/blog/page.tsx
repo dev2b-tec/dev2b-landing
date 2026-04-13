@@ -69,7 +69,7 @@ export default function BlogPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-14 bg-[#0D0520] overflow-hidden">
+      <section className="relative pt-32 pb-14 bg-[var(--d2b-bg-main)] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-[#7C4DFF]/10 blur-[120px]" />
         </div>
@@ -77,20 +77,20 @@ export default function BlogPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-6">
             <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Blog DEV2B</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white text-balance mb-4">
+          <h1 className="text-4xl sm:text-5xl font-black text-[var(--d2b-text-primary)] text-balance mb-4">
             Conteudo para seu negocio{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg,#7C4DFF,#C084FC)" }}>
               crescer de verdade
             </span>
           </h1>
-          <p className="text-white/50 text-lg max-w-xl mx-auto text-pretty">
+          <p className="text-[var(--d2b-text-secondary)] text-lg max-w-xl mx-auto text-pretty">
             Dicas praticas de gestao, financeiro e marketing para empreendedores do setor de servicos.
           </p>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="sticky top-16 z-40 bg-[#0D0520]/95 backdrop-blur-xl border-b border-white/[0.06]">
+      <section className="sticky top-16 z-40 bg-[var(--d2b-topbar-bg)] backdrop-blur-xl border-b border-[var(--d2b-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none">
             {categories.map((cat) => (
@@ -99,7 +99,7 @@ export default function BlogPage() {
                 className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-colors ${
                   cat === "Todos"
                     ? "bg-[#7C4DFF] text-white"
-                    : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white border border-white/10"
+                    : "bg-[var(--d2b-border)] text-[var(--d2b-text-secondary)] hover:bg-[var(--d2b-border-mid)] hover:text-[var(--d2b-text-primary)] border border-[var(--d2b-border-mid)]"
                 }`}
               >
                 {cat}
@@ -110,28 +110,28 @@ export default function BlogPage() {
       </section>
 
       {/* Posts grid */}
-      <section className="py-16 lg:py-20 bg-[#0D0520]">
+      <section className="py-16 lg:py-20 bg-[var(--d2b-bg-main)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Featured post */}
           <div className="mb-10">
-            <Link href="#" className="group flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[#7C4DFF]/12 bg-[#120328]/50 hover:border-[#7C4DFF]/40 transition-all duration-300">
+            <Link href="#" className="group flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[var(--d2b-border-mid)] bg-[var(--d2b-bg-surface)] hover:border-[#7C4DFF]/40 transition-all duration-300">
               <div className="relative h-64 lg:h-auto lg:w-[55%] shrink-0">
                 <Image src={posts[0].image} alt={posts[0].title} fill priority loading="eager" className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-[#0D0520]/30" aria-hidden="true" />
+                <div className="absolute inset-0 bg-[var(--d2b-bg-main)]/30" aria-hidden="true" />
                 <div className="absolute top-5 left-5">
                   <span className="bg-[#7C4DFF] text-white text-xs font-semibold px-3 py-1.5 rounded-full">{posts[0].category}</span>
                 </div>
               </div>
               <div className="flex-1 p-8 lg:p-10 flex flex-col justify-center">
-                <div className="flex items-center gap-3 text-white/30 text-xs mb-4">
+                <div className="flex items-center gap-3 text-[var(--d2b-text-faint)] text-xs mb-4">
                   <span>{posts[0].date}</span>
                   <span>&bull;</span>
                   <span>{posts[0].readTime} de leitura</span>
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-black text-white leading-snug mb-4 group-hover:text-[#C084FC] transition-colors text-balance">
+                <h2 className="text-2xl lg:text-3xl font-black text-[var(--d2b-text-primary)] leading-snug mb-4 group-hover:text-[var(--d2b-brand-light)] transition-colors text-balance">
                   {posts[0].title}
                 </h2>
-                <p className="text-white/45 leading-relaxed mb-6 text-pretty">{posts[0].excerpt}</p>
+                <p className="text-[var(--d2b-text-secondary)] leading-relaxed mb-6 text-pretty">{posts[0].excerpt}</p>
                 <span className="inline-flex items-center gap-2 text-[#C084FC] font-semibold text-sm group-hover:gap-3 transition-all">
                   Ler artigo <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </span>
@@ -145,20 +145,20 @@ export default function BlogPage() {
               <Link
                 key={post.title}
                 href="#"
-                className="group flex flex-col rounded-2xl overflow-hidden border border-[#7C4DFF]/12 bg-[#120328]/50 hover:border-[#7C4DFF]/40 hover:-translate-y-1 transition-all duration-300"
+                className="group flex flex-col rounded-2xl overflow-hidden border border-[var(--d2b-border-mid)] bg-[var(--d2b-bg-surface)] hover:border-[#7C4DFF]/40 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative h-48 overflow-hidden">
                   <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-[#0D0520]/30" aria-hidden="true" />
+                  <div className="absolute inset-0 bg-[var(--d2b-bg-main)]/30" aria-hidden="true" />
                   <div className="absolute top-4 left-4">
                     <span className="bg-[#7C4DFF] text-white text-xs font-semibold px-3 py-1 rounded-full">{post.category}</span>
                   </div>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 text-white/30 text-xs mb-3">
+                  <div className="flex items-center gap-2 text-[var(--d2b-text-faint)] text-xs mb-3">
                     <span>{post.date}</span><span>&bull;</span><span>{post.readTime}</span>
                   </div>
-                  <h3 className="font-bold text-white text-base leading-snug mb-3 group-hover:text-[#C084FC] transition-colors flex-1 text-balance">
+                  <h3 className="font-bold text-[var(--d2b-text-primary)] text-base leading-snug mb-3 group-hover:text-[var(--d2b-brand-light)] transition-colors flex-1 text-balance">
                     {post.title}
                   </h3>
                   <span className="mt-2 inline-flex items-center gap-1.5 text-[#C084FC] font-semibold text-sm group-hover:gap-2.5 transition-all">

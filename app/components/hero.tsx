@@ -1,98 +1,109 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Play } from "lucide-react"
+import { REGISTER_URL } from "@/lib/register-url"
+
+const stats = [
+  { num: "+13 anos", label: "no mercado" },
+  { num: "+44 mil", label: "clinicas ativas" },
+  { num: "+7 mi", label: "pacientes gerenciados" },
+  { num: "+460 mi", label: "agendamentos" },
+]
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0D0520] pt-16">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[var(--d2b-bg-main)] pt-16">
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] rounded-full bg-[#7C4DFF]/10 blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-[#C084FC]/5 blur-[100px]" />
+        <div className="absolute top-0 left-0 w-[800px] h-[600px] rounded-full bg-[#7C4DFF]/10 blur-[160px] -translate-x-1/4" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[400px] rounded-full bg-[#C084FC]/6 blur-[120px]" />
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{ backgroundImage: "radial-gradient(circle, #C084FC 1px, transparent 1px)", backgroundSize: "48px 48px" }}
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 flex flex-col items-center text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#C084FC] animate-pulse" aria-hidden="true" />
-          <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Plataforma DEV2B &mdash; Inovacao em gestao digital</span>
-        </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        {/* Heading */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] text-balance max-w-4xl">
-          o ano entrou em{" "}
-          <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #7C4DFF 0%, #C084FC 100%)" }}>
-            modo turbo
-          </span>
-          <br />ative o modo crescimento
-        </h1>
-
-        <p className="mt-7 text-lg sm:text-xl text-white/50 max-w-2xl text-balance leading-relaxed">
-          Assuma o controle da sua gestao com a DEV2B e tenha mais organizacao, resultado e tempo pra focar no que importa: fazer seu negocio crescer de verdade.
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
-          <Link
-            href="/planos"
-            className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#7C4DFF] text-white font-bold text-base hover:bg-[#6B3FE8] transition-all duration-200 shadow-xl shadow-[#7C4DFF]/40 hover:shadow-[#7C4DFF]/60 hover:-translate-y-0.5"
-          >
-            TESTE GRATIS
-            <ArrowRight className="w-4 h-4" aria-hidden="true" />
-          </Link>
-          <button className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-white/12 text-white/70 font-medium text-base hover:border-[#7C4DFF]/50 hover:text-white transition-all duration-200 group">
-            <div className="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center group-hover:bg-[#7C4DFF]/20 transition-colors">
-              <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" aria-hidden="true" />
+          {/* LEFT — text */}
+          <div className="flex flex-col">
+            {/* Badge */}
+            <div className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-8">
+              <span className="w-2 h-2 rounded-full bg-[#C084FC] animate-pulse" aria-hidden="true" />
+              <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Plataforma DEV2B &mdash; Gestao completa para clinicas</span>
             </div>
-            Ver demonstracao
-          </button>
-        </div>
 
-        <p className="mt-5 text-white/25 text-sm">Sem taxa de adesao &bull; 5 dias gratis &bull; Cancele quando quiser</p>
+            {/* Heading */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[var(--d2b-text-primary)] leading-[1.0] mb-6">
+              Sua clinica em{" "}
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #7C4DFF 0%, #C084FC 100%)" }}>
+                modo turbo
+              </span>
+              <br />ative o modo crescimento
+            </h1>
 
-        {/* Stats bar */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 text-center w-full max-w-2xl">
-          {[
-            { num: "+13 anos", label: "no mercado" },
-            { num: "+44 mil", label: "negocios ativos" },
-            { num: "+7 mi", label: "usuarios" },
-            { num: "+460 mi", label: "agendamentos" },
-          ].map((s) => (
-            <div key={s.num} className="flex flex-col items-center gap-1">
-              <span className="text-2xl sm:text-3xl font-black text-white">{s.num}</span>
-              <span className="text-xs text-white/35">{s.label}</span>
+            <p className="text-lg text-[var(--d2b-text-muted)] max-w-lg leading-relaxed mb-10">
+              Agenda online, gestao de pacientes, financeiro completo e chat integrado ao WhatsApp. Tudo que sua clinica precisa em um unico sistema.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+              <Link
+                href={REGISTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#7C4DFF] text-white font-bold text-base hover:bg-[#6B3FE8] transition-all duration-200 shadow-xl shadow-[#7C4DFF]/40 hover:shadow-[#7C4DFF]/60 hover:-translate-y-0.5"
+              >
+                TESTE GRATIS
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </Link>
+              <button className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-[var(--d2b-border-mid)] text-[var(--d2b-text-secondary)] font-medium text-base hover:border-[#7C4DFF]/50 hover:text-[var(--d2b-text-primary)] transition-all duration-200 group">
+                <div className="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center group-hover:bg-[#7C4DFF]/20 transition-colors">
+                  <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" aria-hidden="true" />
+                </div>
+                Ver demonstracao
+              </button>
             </div>
-          ))}
-        </div>
 
-        {/* Dashboard image */}
-        <div className="mt-20 w-full max-w-5xl relative">
-          <div className="absolute -inset-4 rounded-3xl bg-[#7C4DFF]/8 blur-3xl" aria-hidden="true" />
-          <div className="relative rounded-2xl border border-[#7C4DFF]/20 overflow-hidden shadow-2xl shadow-black/70">
-            {/* Fake browser bar */}
-            <div className="bg-[#0D0520] border-b border-white/[0.06] h-9 flex items-center gap-2 px-4" aria-hidden="true">
-              <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-              <span className="w-2.5 h-2.5 rounded-full bg-white/10" />
-              <div className="mx-auto flex items-center gap-2 bg-white/5 rounded-md px-4 py-1">
-                <span className="text-[10px] text-white/25">app.dev2b.com.br</span>
-              </div>
+            <p className="text-[var(--d2b-text-faint)] text-sm mb-14">Sem taxa de adesão &bull; 5 dias gratis &bull; Cancele quando quiser</p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              {stats.map((s) => (
+                <div key={s.num} className="flex flex-col gap-0.5">
+                  <span className="text-2xl font-black text-[var(--d2b-text-primary)]">{s.num}</span>
+                  <span className="text-xs text-[var(--d2b-text-muted)]">{s.label}</span>
+                </div>
+              ))}
             </div>
-            <Image
-              src="/images/hero-dashboard.jpg"
-              alt="Painel de gestao DEV2B com agenda, financeiro e clientes"
-              width={1200}
-              height={680}
-              className="w-full object-cover"
-              priority
-            />
-            {/* Bottom fade */}
-            <div className="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-[#0D0520] to-transparent" aria-hidden="true" />
           </div>
+
+          {/* RIGHT — dashboard screenshot */}
+          <div className="relative">
+            <div className="absolute -inset-6 rounded-3xl bg-[#7C4DFF]/10 blur-3xl" aria-hidden="true" />
+            <div className="relative rounded-2xl border border-[#7C4DFF]/25 overflow-hidden shadow-2xl shadow-black/70">
+              {/* Fake browser bar */}
+              <div className="bg-[var(--d2b-bg-surface)] border-b border-[var(--d2b-border)] h-9 flex items-center gap-2 px-4 shrink-0" aria-hidden="true">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                <div className="mx-auto flex items-center gap-2 bg-[var(--d2b-border)] rounded-md px-4 py-1">
+                  <span className="text-[10px] text-[var(--d2b-text-faint)]">app.dev2b.com.br/dashboard</span>
+                </div>
+              </div>
+              <Image
+                src="/images/produto-dashboard-limpo.png"
+                alt="Painel DEV2B — Dashboard com agenda, DRE e relatorios"
+                width={1080}
+                height={1080}
+                className="w-full object-cover object-top"
+                priority
+              />
+              <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[var(--d2b-bg-main)] to-transparent" aria-hidden="true" />
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

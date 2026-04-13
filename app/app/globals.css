@@ -3,6 +3,45 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ─── Dev2B theme tokens ─────────────────────────────────────────────────── */
+/* Light mode (default) */
+:root {
+  --d2b-bg-deep:        #EDF0F7;
+  --d2b-bg-main:        #FFFFFF;
+  --d2b-bg-surface:     #F8F7FF;
+  --d2b-bg-elevated:    #EFF0F9;
+  --d2b-text-primary:   #1A1035;
+  --d2b-text-secondary: rgba(26, 16, 53, 0.65);
+  --d2b-text-muted:     rgba(26, 16, 53, 0.45);
+  --d2b-text-faint:     rgba(26, 16, 53, 0.30);
+  --d2b-brand:          #7C4DFF;
+  --d2b-brand-light:    #8B5CF6;
+  --d2b-border:         rgba(0, 0, 0, 0.07);
+  --d2b-border-mid:     rgba(124, 77, 255, 0.20);
+  --d2b-topbar-bg:      rgba(255, 255, 255, 0.95);
+  --d2b-topbar-flat:    #FFFFFF;
+  --d2b-card-bg:        #FFFFFF;
+}
+
+/* Dark mode */
+html[data-theme="dark"] {
+  --d2b-bg-deep:        #080218;
+  --d2b-bg-main:        #0D0520;
+  --d2b-bg-surface:     #120328;
+  --d2b-bg-elevated:    #150830;
+  --d2b-text-primary:   #F5F0FF;
+  --d2b-text-secondary: rgba(245, 240, 255, 0.65);
+  --d2b-text-muted:     rgba(245, 240, 255, 0.40);
+  --d2b-text-faint:     rgba(245, 240, 255, 0.20);
+  --d2b-brand:          #7C4DFF;
+  --d2b-brand-light:    #C084FC;
+  --d2b-border:         rgba(255, 255, 255, 0.06);
+  --d2b-border-mid:     rgba(124, 77, 255, 0.18);
+  --d2b-topbar-bg:      rgba(13, 5, 32, 0.95);
+  --d2b-topbar-flat:    #0D0520;
+  --d2b-card-bg:        #0D0520;
+}
+
 :root {
   /* Nubank-inspired dark purple palette */
   --background: #0D0520;
@@ -129,9 +168,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    background-color: #0D0520;
-    color: #F5F0FF;
+    background-color: var(--d2b-bg-main);
+    color: var(--d2b-text-primary);
   }
 
   html {

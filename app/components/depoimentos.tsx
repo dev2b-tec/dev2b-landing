@@ -62,7 +62,7 @@ const depoimentos = [
 
 export default function Depoimentos() {
   return (
-    <section className="py-20 lg:py-28 bg-[#120328] relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-[var(--d2b-bg-surface)] relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-0 left-1/4 w-[600px] h-[400px] rounded-full bg-[#7C4DFF]/8 blur-[140px]" />
       </div>
@@ -73,10 +73,10 @@ export default function Depoimentos() {
           <span className="inline-block text-[#C084FC] font-semibold text-xs uppercase tracking-widest mb-4">
             Depoimentos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white text-balance mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--d2b-text-primary)] text-balance mb-4">
             Quem inova com a DEV2B
           </h2>
-          <p className="text-white/40 text-lg max-w-xl mx-auto text-pretty">
+          <p className="text-[var(--d2b-text-muted)] text-lg max-w-xl mx-auto text-pretty">
             Mais de 44 mil negocios confiam na DEV2B. Voce esta esperando o que?
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function Depoimentos() {
           {depoimentos.map((dep) => (
             <div
               key={dep.name}
-              className="bg-[#0D0520] border border-[#7C4DFF]/12 rounded-2xl p-6 flex flex-col gap-4 hover:border-[#7C4DFF]/40 hover:bg-[#150830] transition-all duration-300"
+              className="bg-[var(--d2b-card-bg)] border border-[var(--d2b-border-mid)] rounded-2xl p-6 flex flex-col gap-4 hover:border-[#7C4DFF]/40 hover:bg-[var(--d2b-bg-elevated)] transition-all duration-300"
             >
               <div className="flex items-start justify-between">
                 <div className="flex gap-0.5" aria-label={`Nota ${dep.rating} de 5`}>
@@ -97,9 +97,9 @@ export default function Depoimentos() {
                 <Quote className="w-5 h-5 text-[#7C4DFF]/30" aria-hidden="true" />
               </div>
 
-              <p className="text-white/55 text-sm leading-relaxed flex-1">{dep.text}</p>
+              <p className="text-[var(--d2b-text-secondary)] text-sm leading-relaxed flex-1">{dep.text}</p>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-white/[0.06]">
+                <div className="flex items-center gap-3 pt-3 border-t border-[var(--d2b-border)]">
                 <Image
                   src={dep.avatar}
                   alt={dep.name}
@@ -108,8 +108,8 @@ export default function Depoimentos() {
                   className="rounded-full object-cover"
                 />
                 <div>
-                  <p className="text-white font-semibold text-sm">{dep.name}</p>
-                  <p className="text-white/35 text-xs">{dep.role}</p>
+                  <p className="text-[var(--d2b-text-primary)] font-semibold text-sm">{dep.name}</p>
+                  <p className="text-[var(--d2b-text-muted)] text-xs">{dep.role}</p>
                 </div>
               </div>
             </div>
