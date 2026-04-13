@@ -116,7 +116,7 @@ export default function BlogPage() {
           <div className="mb-10">
             <Link href="#" className="group flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[#7C4DFF]/12 bg-[#120328]/50 hover:border-[#7C4DFF]/40 transition-all duration-300">
               <div className="relative h-64 lg:h-auto lg:w-[55%] shrink-0">
-                <Image src={posts[0].image} alt={posts[0].title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src={posts[0].image} alt={posts[0].title} fill priority loading="eager" className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-[#0D0520]/30" aria-hidden="true" />
                 <div className="absolute top-5 left-5">
                   <span className="bg-[#7C4DFF] text-white text-xs font-semibold px-3 py-1.5 rounded-full">{posts[0].category}</span>
