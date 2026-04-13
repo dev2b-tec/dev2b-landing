@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { signIn, useSession } from "next-auth/react"
+import { signIn } from "next-auth/react"
 import { useTheme } from "@/hooks/use-theme"
 import { REGISTER_URL } from "@/lib/register-url"
 import {
@@ -45,19 +45,6 @@ const dev2bItems = [
 type DropdownKey = "negocios" | "solucoes" | "dev2b" | null
 
 function ClienteButton() {
-  const { data: session } = useSession()
-
-  if (session) {
-    return (
-      <button
-        onClick={() => signIn("keycloak", { callbackUrl: "https://app.dev2b.tec.br" })}
-        className="text-sm font-medium text-[var(--d2b-text-muted)] hover:text-[var(--d2b-text-primary)] px-3 py-2 rounded-lg hover:bg-[var(--d2b-border)] transition-colors"
-      >
-        {session.user?.name ?? "Minha conta"}
-      </button>
-    )
-  }
-
   return (
     <button
       onClick={() => signIn("keycloak", { callbackUrl: "https://app.dev2b.tec.br" })}
