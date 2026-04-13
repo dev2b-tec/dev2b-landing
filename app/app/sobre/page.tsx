@@ -3,6 +3,7 @@ import Footer from "@/components/footer"
 import CTA from "@/components/cta"
 import Link from "next/link"
 import { ArrowRight, Users, Award, Globe, TrendingUp } from "lucide-react"
+import { REGISTER_URL } from "@/lib/register-url"
 
 export const metadata = {
   title: "Sobre nos | DEV2B",
@@ -28,7 +29,7 @@ export default function SobrePage() {
     <main>
       <Navbar />
 
-      <section className="relative pt-32 pb-20 bg-[#0D0520] overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-[var(--d2b-bg-main)] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-[#7C4DFF]/10 blur-[120px]" />
         </div>
@@ -37,13 +38,13 @@ export default function SobrePage() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-6">
               <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Sobre a DEV2B</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black text-white text-balance mb-6">
+            <h1 className="text-4xl sm:text-5xl font-black text-[var(--d2b-text-primary)] text-balance mb-6">
               Somos a parceira de negocios que{" "}
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg,#7C4DFF,#C084FC)" }}>
                 bota pra girar
               </span>
             </h1>
-            <p className="text-white/50 text-lg leading-relaxed text-pretty">
+            <p className="text-[var(--d2b-text-secondary)] text-lg leading-relaxed text-pretty">
               Ha mais de 13 anos, a DEV2B conecta tecnologia e empreendedorismo para transformar a gestao de negocios de servicos no Brasil. Somos mais que um software: somos parceiros de resultado.
             </p>
           </div>
@@ -51,25 +52,25 @@ export default function SobrePage() {
           {/* Numbers */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-20">
             {numeros.map((n) => (
-              <div key={n.label} className="text-center p-6 rounded-2xl border border-[#7C4DFF]/12 bg-[#120328]/50">
-                <p className="text-3xl lg:text-4xl font-black text-white mb-1">{n.value}</p>
-                <p className="text-white/40 text-sm">{n.label}</p>
+              <div key={n.label} className="text-center p-6 rounded-2xl border border-[var(--d2b-border-mid)] bg-[var(--d2b-bg-surface)]">
+                <p className="text-3xl lg:text-4xl font-black text-[var(--d2b-text-primary)] mb-1">{n.value}</p>
+                <p className="text-[var(--d2b-text-muted)] text-sm">{n.label}</p>
               </div>
             ))}
           </div>
 
           {/* Valores */}
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-black text-white text-center mb-10">Nossos valores</h2>
+            <h2 className="text-2xl font-black text-[var(--d2b-text-primary)] text-center mb-10">Nossos valores</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {valores.map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="flex gap-4 p-6 rounded-2xl border border-[#7C4DFF]/12 bg-[#120328]/50 hover:border-[#7C4DFF]/30 transition-colors">
+                <div key={title} className="flex gap-4 p-6 rounded-2xl border border-[var(--d2b-border-mid)] bg-[var(--d2b-bg-surface)] hover:border-[#7C4DFF]/30 transition-colors">
                   <div className="w-10 h-10 rounded-xl bg-[#7C4DFF]/20 flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-[#C084FC]" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-white mb-1">{title}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                    <h3 className="font-bold text-[var(--d2b-text-primary)] mb-1">{title}</h3>
+                    <p className="text-[var(--d2b-text-secondary)] text-sm leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -77,7 +78,7 @@ export default function SobrePage() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/planos" className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#7C4DFF] text-white font-bold hover:bg-[#6B3FE8] transition-all shadow-xl shadow-[#7C4DFF]/40">
+            <Link href={REGISTER_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#7C4DFF] text-white font-bold hover:bg-[#6B3FE8] transition-all shadow-xl shadow-[#7C4DFF]/40">
               Conheca nossos planos <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>

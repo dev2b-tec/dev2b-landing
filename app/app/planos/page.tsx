@@ -15,7 +15,7 @@ export default function PlanosPage() {
     <main>
       <Navbar />
       {/* Hero da pagina */}
-      <section className="relative pt-32 pb-16 bg-[#0D0520] overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-[var(--d2b-bg-main)] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full bg-[#7C4DFF]/10 blur-[120px]" />
         </div>
@@ -23,13 +23,13 @@ export default function PlanosPage() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-6">
             <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Planos e Precos</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white text-balance mb-5">
+          <h1 className="text-4xl sm:text-5xl font-black text-[var(--d2b-text-primary)] text-balance mb-5">
             DEV2B sob medida para{" "}
             <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg,#7C4DFF,#C084FC)" }}>
               o seu sucesso
             </span>
           </h1>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto text-pretty mb-8">
+          <p className="text-[var(--d2b-text-secondary)] text-lg max-w-2xl mx-auto text-pretty mb-8">
             Solucoes personalizadas para todos os tipos de negocios, desde os pequenos empreendimentos ate grandes redes e franquias.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
