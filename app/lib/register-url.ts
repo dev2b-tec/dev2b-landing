@@ -12,5 +12,9 @@ const clientId =
   process.env.KEYCLOAK_CLIENT_ID ??
   "dev2b-app"
 
+// Após verificar e-mail o Keycloak redireciona para cá
+const redirectUri =
+  process.env.NEXT_PUBLIC_APP_URL ?? "https://app.dev2b.tec.br"
+
 export const REGISTER_URL =
-  `${issuer}/protocol/openid-connect/registrations?client_id=${clientId}&response_type=code`
+  `${issuer}/protocol/openid-connect/registrations?client_id=${clientId}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}`

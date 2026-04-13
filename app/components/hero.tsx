@@ -31,20 +31,23 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex self-start items-center gap-2 px-4 py-1.5 rounded-full bg-[#7C4DFF]/15 border border-[#7C4DFF]/30 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#C084FC] animate-pulse" aria-hidden="true" />
-              <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Plataforma DEV2B &mdash; Gestao completa para clinicas</span>
+              <span className="text-[#C084FC] text-xs font-semibold tracking-wide">Plataforma DEV2B &mdash; IA + WhatsApp para clinicas</span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[var(--d2b-text-primary)] leading-[1.0] mb-6">
-              Sua clinica em{" "}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-[var(--d2b-text-primary)] leading-[1.05] mb-6">
+              Organize sua clinica{" "}
               <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #7C4DFF 0%, #C084FC 100%)" }}>
-                modo turbo
+                com IA + WhatsApp
               </span>
-              <br />ative o modo crescimento
+              <br />por{" "}
+              <span className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(135deg, #7C4DFF 0%, #C084FC 100%)" }}>
+                R$39/mes
+              </span>
             </h1>
 
             <p className="text-lg text-[var(--d2b-text-muted)] max-w-lg leading-relaxed mb-10">
-              Agenda online, gestao de pacientes, financeiro completo e chat integrado ao WhatsApp. Tudo que sua clinica precisa em um unico sistema.
+              Agenda online, confirmacao automatica via WhatsApp, atendimento com IA e gestao completa. Tudo que sua clinica precisa em um unico sistema.
             </p>
 
             {/* CTAs */}
