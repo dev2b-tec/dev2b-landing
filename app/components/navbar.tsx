@@ -2,7 +2,9 @@
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
+import iconPng from "@/app/icon.png"
 import { signIn } from "next-auth/react"
 import { useTheme } from "@/hooks/use-theme"
 import { REGISTER_URL } from "@/lib/register-url"
@@ -120,13 +122,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0" aria-label="DEV2B inicio">
-            <div className="w-8 h-8 rounded-xl bg-[#7C4DFF] flex items-center justify-center shadow-md shadow-purple-600/40">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z" stroke="white" strokeWidth="1.5" fill="rgba(255,255,255,0.15)"/>
-                <path d="M8 4.5L11.5 6.5V10.5L8 12.5L4.5 10.5V6.5L8 4.5Z" fill="white"/>
-              </svg>
-            </div>
+          <Link href="/" className="flex items-center gap-1 shrink-0" aria-label="DEV2B inicio">
+            <Image src={iconPng} alt="DEV2B icon" width={32} height={32} />
             <span className="text-[var(--d2b-text-primary)] font-bold text-xl tracking-tight leading-none">
               DEV<span className="text-[#7C4DFF]">2B</span>
             </span>
