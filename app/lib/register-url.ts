@@ -3,9 +3,12 @@
  * Produção:  NEXT_PUBLIC_KEYCLOAK_ISSUER (mesma raiz do KEYCLOAK_ISSUER)
  * Local dev: http://localhost:8080/realms/dev2b
  */
+const PROD_ISSUER = "https://auth.dev2b.tec.br/realms/dev2b"
+
+// Se a variável de ambiente não estiver definida, usa sempre o issuer de produção.
+// Para rodar localmente, defina NEXT_PUBLIC_KEYCLOAK_ISSUER=http://localhost:8080/realms/dev2b
 const issuer =
-  process.env.NEXT_PUBLIC_KEYCLOAK_ISSUER ??
-  "http://localhost:8080/realms/dev2b"
+  process.env.NEXT_PUBLIC_KEYCLOAK_ISSUER ?? PROD_ISSUER
 
 const clientId =
   process.env.NEXT_PUBLIC_KEYCLOAK_CLIENT_ID ??
