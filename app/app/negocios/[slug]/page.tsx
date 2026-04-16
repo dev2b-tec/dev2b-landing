@@ -88,7 +88,7 @@ const segmentosData: Record<string, SegmentoData> = {
     subtitle: "Gestao completa para o seu consultorio medico",
     description:
       "Prontuario eletronico, agenda online e comunicacao direta com pacientes. Reduza faltas com confirmacoes automaticas e tenha o historico clinico completo de cada paciente a um clique.",
-    heroImage: "/images/segmento-fitness.jpg",
+    heroImage: "/images/consultorio.png",
     benefits: [
       "Prontuario eletronico completo",
       "Agenda online com confirmacao automatica",

@@ -26,7 +26,7 @@ const segmentos = [
     title: "Consultorios Medicos",
     description:
       "Prontuario eletronico, agenda online e comunicacao direta com pacientes. Reduza faltas com confirmacoes automaticas e tenha o historico clinico completo de cada paciente a um clique.",
-    image: "/images/segmento-fitness.jpg",
+    image: "/images/consultorio.png",
     href: "/negocios/consultorios-medicos",
     bullets: ["Prontuario e evolucoes clinicas", "Confirmacao automatica de consultas", "NFS-e integrada"],
     cta: "Solucoes para consultorios medicos",
