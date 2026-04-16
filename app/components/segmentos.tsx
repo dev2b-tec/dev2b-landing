@@ -44,7 +44,7 @@ const segmentos = [
     title: "Redes e Franquias",
     description:
       "Gestao centralizada de todas as unidades com visao consolidada de faturamento, atendimentos e desempenho de profissionais. Escale sua clinica sem perder o controle.",
-    image: "/images/hero-dashboard.jpg",
+    image: "/images/relatorio-gerencial.png",
     href: "/negocios/redes-e-franquias",
     bullets: ["Gestao centralizada das unidades", "Relatorios consolidados por unidade", "Padronizacao de processos"],
     cta: "Solucoes para redes e franquias",

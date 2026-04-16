@@ -34,7 +34,7 @@ const features = [
     description:
       "Chat integrado diretamente ao WhatsApp dos seus pacientes. Receba mensagens, responda duvidas e gerencie conversas ativas sem sair da plataforma. Comunicacao centralizada e rapida.",
     bullets: ["Chat integrado ao WhatsApp", "Historico completo de conversas", "Envio de avisos e mensagens em massa", "Notificacoes de novas mensagens"],
-    image: "/images/produto-chat.png",
+    image: "/images/chatboot-customizavel.png",
     icon: MessageSquare,
     href: "/solucoes#comunicacao",
     cta: "Saiba mais",

@@ -181,7 +181,7 @@ const segmentosData: Record<string, SegmentoData> = {
     subtitle: "Gestao centralizada para todas as suas unidades",
     description:
       "Visao consolidada de todas as unidades, DRE consolidado, Canal de Ideias com pacientes e padronizacao de processos. DEV2B para clinicas que querem crescer sem limites.",
-    heroImage: "/images/hero-dashboard.jpg",
+    heroImage: "/images/relatorio-gerencial.png",
     benefits: [
       "Gestao centralizada de todas as unidades",
       "DRE e relatorios consolidados da rede",
