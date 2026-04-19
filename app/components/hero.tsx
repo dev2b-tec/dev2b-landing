@@ -61,12 +61,17 @@ export default function Hero() {
                 TESTE GRATIS
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
-              <button className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-[var(--d2b-border-mid)] text-[var(--d2b-text-secondary)] font-medium text-base hover:border-[#7C4DFF]/50 hover:text-[var(--d2b-text-primary)] transition-all duration-200 group">
+              <a
+                href="https://youtu.be/S6FIZmDtBOM"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-4 rounded-2xl border border-[var(--d2b-border-mid)] text-[var(--d2b-text-secondary)] font-medium text-base hover:border-[#7C4DFF]/50 hover:text-[var(--d2b-text-primary)] transition-all duration-200 group"
+              >
                 <div className="w-8 h-8 rounded-full bg-white/8 flex items-center justify-center group-hover:bg-[#7C4DFF]/20 transition-colors">
                   <Play className="w-3.5 h-3.5 text-white fill-white ml-0.5" aria-hidden="true" />
                 </div>
                 Ver demonstracao
-              </button>
+              </a>
             </div>
 
             <p className="text-[var(--d2b-text-faint)] text-sm mb-14">Sem taxa de adesão &bull; 5 dias gratis &bull; Cancele quando quiser</p>
