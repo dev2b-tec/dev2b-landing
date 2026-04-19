@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Providers } from '@/components/providers'
+import Script from 'next/script'
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
@@ -32,6 +33,19 @@ export default function RootLayout({
           {children}
         </Providers>
         <Analytics />
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18104671517"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18104671517');
+          `}
+        </Script>
       </body>
     </html>
   )
