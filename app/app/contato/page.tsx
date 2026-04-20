@@ -63,10 +63,10 @@ export default function ContatoPage() {
             {/* Info */}
             <div className="flex flex-col gap-5">
               {[
-                { icon: MessageSquare, title: "Chat ao vivo", desc: "Converse em tempo real com nossos especialistas pelo chat dentro da plataforma.", action: "Abrir chat" },
-                { icon: Mail, title: "E-mail", desc: "Prefere escrever? Nos envie um e-mail e responderemos em ate 24 horas.", action: "contato@dev2b.com.br" },
-                { icon: Phone, title: "Suporte telefonico", desc: "Ligue para nosso time de suporte de segunda a sexta, das 8h as 18h.", action: "Ver horarios" },
-              ].map(({ icon: Icon, title, desc, action }) => (
+                { icon: MessageSquare, title: "Chat ao vivo", desc: "Converse em tempo real com nossos especialistas pelo WhatsApp.", action: "Abrir WhatsApp", href: "https://wa.me/5581996349077?text=Ola%2C%20gostaria%20de%20conversar%20com%20um%20especialista%20DEV2B!" },
+                { icon: Mail, title: "E-mail", desc: "Prefere escrever? Nos envie um e-mail e responderemos em ate 24 horas.", action: "contato@dev2b.com.br", href: "mailto:contato@dev2b.com.br" },
+                { icon: Phone, title: "Suporte tecnico", desc: "Fale diretamente com nosso suporte via WhatsApp, de segunda a sexta, das 8h as 18h.", action: "Chamar no WhatsApp", href: "https://wa.me/5581996349077?text=Ola%2C%20preciso%20de%20suporte%20tecnico%20DEV2B!" },
+              ].map(({ icon: Icon, title, desc, action, href }) => (
                 <div key={title} className="flex gap-4 p-6 rounded-2xl border border-[var(--d2b-border-mid)] bg-[var(--d2b-bg-surface)] hover:border-[#7C4DFF]/30 transition-colors">
                   <div className="w-11 h-11 rounded-xl bg-[#7C4DFF]/20 flex items-center justify-center shrink-0">
                     <Icon className="w-5 h-5 text-[#C084FC]" aria-hidden="true" />
@@ -74,7 +74,7 @@ export default function ContatoPage() {
                   <div className="flex-1">
                     <h3 className="font-bold text-[var(--d2b-text-primary)] mb-1">{title}</h3>
                     <p className="text-[var(--d2b-text-secondary)] text-sm leading-relaxed mb-3">{desc}</p>
-                    <button className="text-sm text-[#C084FC] font-semibold hover:text-white transition-colors">{action}</button>
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="text-sm text-[#C084FC] font-semibold hover:text-white transition-colors">{action}</a>
                   </div>
                 </div>
               ))}
